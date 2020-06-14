@@ -1,0 +1,9 @@
+form {
+    padding: 20px;
+    border: 2px solid #dddddd;
+}
+
+h5,
+label {
+    text-transform: uppercase;
+}
