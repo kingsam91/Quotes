@@ -7,28 +7,28 @@ import { Quote } from '../models/quote.model';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes:Quote[] = [];
+  quotes: Quote[] = [];
 
-  constructor() { 
-
-    console.log("Quotes: ", this.quotes);
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  addNewQuote(quote){
-    let quotesLength = this.quotes.length;
+  addNewQuote(quote) {
     const quoteObj = {
       author: quote.author,
       submitter: quote.submitter,
       quote: quote.quote,
       upvotes: 0,
       downvotes: 0,
-      createdAt: new Date().toString()
+      createdAt: new Date().toString(),
+      showDetails: false
     }
     this.quotes.push(quoteObj)
+  }
+
+  toggleDetails(index) {
+    this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
 
 }
