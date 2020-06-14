@@ -17,7 +17,7 @@ export class NewQuoteComponent implements OnInit {
   }
 
   submitQuote(){
-    console.log("New quote: ", this.newQuote)
+    this.addQuote.emit(this.newQuote);
   }
 
 }
