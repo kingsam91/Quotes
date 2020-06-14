@@ -9,13 +9,26 @@ import { Quote } from '../models/quote.model';
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [];
 
-  constructor() { }
+  constructor() { 
+
+    console.log("Quotes: ", this.quotes);
+
+  }
 
   ngOnInit(): void {
   }
 
   addNewQuote(quote){
-    console.log("Quote: ", quote);
+    let quotesLength = this.quotes.length;
+    const quoteObj = {
+      author: quote.author,
+      submitter: quote.submitter,
+      quote: quote.quote,
+      upvotes: 0,
+      downvotes: 0,
+      createdAt: new Date().toString()
+    }
+    this.quotes.push(quoteObj)
   }
 
 }

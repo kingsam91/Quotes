@@ -1,11 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-7">
-            <p>”He who does not know one thing knows another”.</p>
-            <app-quote-detail></app-quote-detail>
-            <button class="btn btn-secondary">View</button>
-            <button class="btn btn-success" id="like">Like</button>
-            <button class="btn btn-danger" id="dislike">Dislike</button>
+            <h3>Quotes:</h3>
+            <div *ngFor='let quote of quotes'>
+                <p>”He who does not know one thing knows another”.</p>
+                <app-quote-detail></app-quote-detail>
+                <button class="btn btn-secondary">View</button>
+                <button class="btn btn-success" id="like">Like</button>
+                <button class="btn btn-danger" id="dislike">Dislike</button>
+            </div>
         </div>
         <div class="col-lg-5">
             <app-new-quote (addQuote)="addNewQuote($event)"></app-new-quote>
