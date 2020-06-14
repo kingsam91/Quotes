@@ -5,7 +5,7 @@
             <div *ngFor='let quote of quotes;let i = index'>
                 <p>{{quote.quote}}</p>
                 <app-quote-detail *ngIf='quote.showDetails' [quote]='quote'></app-quote-detail>
-                <button (click)='toggleDetails(i)' class="btn btn-secondary">View</button>
+                <button (click)='toggleDetails(i)' class="btn btn-secondary">{{quote.showDetails ? 'Hide' : 'Show'}}</button>
                 <button class="btn btn-success" id="upvotes">upvotes</button>
                 <button class="btn btn-danger" id="downvotes">downvotes</button>
             </div>
