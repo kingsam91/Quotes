@@ -1,4 +1,4 @@
-export class Quote.Model {
+export class Quote {
     author:string;
     submitter:string;
     quote:string;

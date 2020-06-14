@@ -1,16 +1,16 @@
-<form method="POST" ng-submit="addQuote()">
+<form (ngSubmit)="submitQuote()" #quoteForm='ngForm'>
 <h5>new quote</h5>
 <div class="form-group">
     <label>Write quote:</label>
-    <textarea ng-model="quote" class="form-control" rows="2" name="quote" required></textarea>
+    <textarea [(ngModel)]="newQuote.quote" class="form-control" rows="2" name="quote" required></textarea>
 </div>
 <div class="form-group">
     <label>Author:</label>
-    <input ng-model="author" class="form-control" name="author" required/>
+    <input [(ngModel)]="newQuote.author" class="form-control" name="author" required/>
 </div>
 <div class="form-group">
     <label>Your name:</label>
-    <input ng-model="submitter" class="form-control" name="submitter" required/>
+    <input [(ngModel)]="newQuote.submitter" class="form-control" name="submitter" required/>
 </div>
 <button class="btn btn-secondary" type="submit">submit</button>
 </form>
