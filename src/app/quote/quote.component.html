@@ -6,8 +6,9 @@
                 <p>{{quote.quote}}</p>
                 <app-quote-detail *ngIf='quote.showDetails' [quote]='quote'></app-quote-detail>
                 <button (click)='toggleDetails(i)' class="btn btn-secondary">{{quote.showDetails ? 'Hide' : 'Show'}}</button>
-                <button class="btn btn-success" id="upvotes">upvotes</button>
-                <button class="btn btn-danger" id="downvotes">downvotes</button>
+                <button (click)='upvoteQuote(i)' class="btn btn-success" id="upvotes">upvotes</button>
+                <button (click)='downvoteQuote(i)' class="btn btn-warning" id="downvotes">downvotes</button>
+                <button (click)= 'quoteDelete(i)' class="btn btn-danger">Delete</button>
             </div>
         </div>
         <div class="col-lg-5">
